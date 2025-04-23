@@ -122,6 +122,19 @@
 </figure>
 <body>
 <h1>Hello, world!</h1>
+<div id="cardContainer" class="card-box"></div>  
+<div class="flex flex-wrap justify-between items-center gap-[30px] mx-[30px]">
+  <div class="controls">
+    <label for="resultsPerPage">Results per page:</label>
+    <select id="resultsPerPage">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+
+  <div class="pagination flex justify-center items-center" id="pagination"></div>
+</div>
 
 <!-- Optional JavaScript; choose one of the two! -->
 <!-- Option 1: Bootstrap Bundle with Popper -->
