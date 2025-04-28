@@ -166,3 +166,75 @@ $('.randomize img').each(function() {
   // Initial render
   renderCards(currentPage, resultsPerPage);
   renderPagination();
+
+
+  const slides = document.querySelectorAll(".carousel div")
+        const firstSlide = 0
+        const lastSlide = slides.length - 1
+        let activeSlide = 0
+
+        const goToPreviousSlide = () => {
+            slides[activeSlide].classList.remove("active")
+            if (activeSlide !== firstSlide) {
+                activeSlide = activeSlide - 1
+            } else {
+                activeSlide = lastSlide
+            }
+            slides[activeSlide].classList.add("active")
+        }
+
+        const goToNextSlide = () => {
+            slides[activeSlide].classList.remove("active")
+            if (activeSlide !== lastSlide) {
+                activeSlide = activeSlide + 1
+            } else {
+                activeSlide = firstSlide
+            }
+            slides[activeSlide].classList.add("active")
+        }
+
+        const slides1 = document.querySelectorAll(".carousel1 div")
+        const firstSlide1 = 0
+        const lastSlide1 = slides1.length - 1
+        let activeSlide1 = 0
+
+        const goToPreviousSlide1 = () => {
+            slides1[activeSlide1].classList.remove("active1")
+            if (activeSlide1 !== firstSlide1) {
+                activeSlide1 = activeSlide1 - 1
+            } else {
+                activeSlide1 = lastSlide1
+            }
+            slides1[activeSlide1].classList.add("active1")
+        }
+
+        const goToNextSlide1 = () => {
+            slides1[activeSlide1].classList.remove("active1")
+            if (activeSlide1 !== lastSlide1) {
+                activeSlide1 = activeSlide1 + 1;
+            } else {
+                activeSlide1 = firstSlide1
+            }
+            slides1[activeSlide1].classList.add("active1")
+        }
+
+        window.addEventListener('wheel', function (event) {
+            if (event.deltaY > 0) {
+                goToNextSlide();
+                goToNextSlide1();
+                playAudio('https://tim-school.com/codepen/book/sound.mp3');
+            } else {
+                goToPreviousSlide();
+                goToPreviousSlide1();
+                playAudio('https://tim-school.com/codepen/book/sound.mp3');
+            }
+        });
+
+        var audio_;
+
+        function playAudio(src) {
+            if (audio_) audio_.pause();
+            const audio = audio_ = new Audio(src);
+            audio.play();
+            audio.currentTime = 0;
+        }
