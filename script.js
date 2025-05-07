@@ -238,3 +238,5 @@ $('.randomize img').each(function() {
             audio.play();
             audio.currentTime = 0;
         }
+
+        
