@@ -239,4 +239,3 @@ $('.randomize img').each(function() {
             audio.currentTime = 0;
         }
 
-        
