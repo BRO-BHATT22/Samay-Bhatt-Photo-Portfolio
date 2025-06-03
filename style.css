@@ -127,7 +127,7 @@ body {
 }
 
 .carousel {
-  position: absolute;
+  position: fixed;
   top: 40px;
   left: 70px;
   width: 180px;
